@@ -10,6 +10,8 @@ name = "pypi"
 flask = "*"
 flask-pymongo = "*"
 flask-mongoengine = "*"
+marshmallow-mongoengine = "*"
+marshmallow = "*"
 
 
 [dev-packages]

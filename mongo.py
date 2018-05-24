@@ -2,6 +2,7 @@ from mongoengine import connect, \
     Document, EmbeddedDocument, \
     StringField, ReferenceField, ListField, EmbeddedDocumentField, \
     CASCADE
+from marshmallow_mongoengine import ModelSchema
 
 connect('tumblelog')
 
@@ -24,6 +25,11 @@ class Post(Document):
     comments = ListField(EmbeddedDocumentField(Comment))
 
     meta = {'allow_inheritance': True}
+
+
+class PostSchema(ModelSchema):
+    class Meta:
+        model = Post
 
 
 class TextPost(Post):
